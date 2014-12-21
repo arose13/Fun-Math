@@ -1,4 +1,4 @@
 Statistics
 ==========
 
-A collection of easy to use statistical functions
+A collection of easy to use statistical functions for Java.
