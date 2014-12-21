@@ -8,7 +8,7 @@ public class TestingFunctions {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// Stdev works
+		// TODO test functions below
 		BasicStatistics mStatistics = new BasicStatistics();
 		ArrayList<Double> pop = new ArrayList<Double>();
 		pop.add((double) 30); //1
@@ -21,7 +21,7 @@ public class TestingFunctions {
 		pop.add((double) 28); //8
 		
 		System.out.println("time pre : " + System.currentTimeMillis());
-		System.out.println(mStatistics.stdev(pop));
+		System.out.println(mStatistics.mean(pop));
 		System.out.println("time post : " + System.currentTimeMillis()); 
 	}
 

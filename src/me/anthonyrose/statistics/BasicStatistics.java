@@ -21,6 +21,15 @@ public class BasicStatistics {
 		return sumXsq;
 	}
 	
+	/* Computes Mean or Average */
+	public double mean(ArrayList<Double> population) {
+		double m = 0;
+		if (population.size() > 0) {
+			m = sumX(population) / population.size();
+		}
+		return m;
+	}
+	
 	/* This computes the variance from a data set */
 	public double variance(ArrayList<Double> population) {
 		double sumX = sumX(population);
