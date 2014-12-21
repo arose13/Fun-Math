@@ -11,17 +11,26 @@ public class TestingFunctions {
 		// TODO test functions below
 		BasicStatistics mStatistics = new BasicStatistics();
 		ArrayList<Double> pop = new ArrayList<Double>();
-		pop.add((double) 30); //1
-		pop.add((double) 31); //2
-		pop.add((double) 29); //3
-		pop.add((double) 30); //4
-		pop.add((double) 32); //5
-		pop.add((double) 32); //6
-		pop.add((double) 31); //7
-		pop.add((double) 28); //8
+		pop.add((double) 22); //1
+		pop.add((double) 23); //2
+		pop.add((double) 22); //3
+		pop.add((double) 20); //3
+		pop.add((double) 22); //3
+		pop.add((double) 26); //3
+		pop.add((double) 21); //3
+		pop.add((double) 24); //3
+		pop.add((double) 23); //3
+		pop.add((double) 19); //3
 		
-		System.out.println("time pre : " + System.currentTimeMillis());
-		System.out.println(mStatistics.mean(pop));
+		double stdev = mStatistics.stdev(pop);
+		double mean = mStatistics.mean(pop);
+		
+		NormalDistn mDistn = new NormalDistn();
+		
+		System.out.println("time pre  : " + System.currentTimeMillis());
+		System.out.println(mean);
+		System.out.println(stdev);
+		System.out.println(mDistn.normalDistnPDF(23, mean, stdev));
 		System.out.println("time post : " + System.currentTimeMillis()); 
 	}
 
