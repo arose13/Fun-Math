@@ -38,9 +38,9 @@ public class ZScore {
 		}
 		return z > 0 ? ((x + 1) * 0.5) : ((1 - x) * 0.5);
 	}
-
+	
+	/* Return ZScore from a particular value */
 	public double getZfromX(double x, double mean, double stdev) {
-		double z = 0;
 		if (stdev > 0) {
 			return ((x - mean) / stdev);
 		} else {
