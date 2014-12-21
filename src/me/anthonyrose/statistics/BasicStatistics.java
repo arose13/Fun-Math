@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class BasicStatistics {
 	
+	/* Created by AnthonyRose 
+	 * basic statistical functions are in this class */
+	
 	private double sumX(ArrayList<Double> population) {
 		double sumX = 0;		
 		for (int i = 0; i < population.size(); i++) {

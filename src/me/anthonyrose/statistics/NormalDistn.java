@@ -1,7 +1,9 @@
 package me.anthonyrose.statistics;
 
 public class NormalDistn {
-
+	
+	/* Created by AnthonyRose */
+	
 	public double normalDistnPDF(double x, double mean, double stdev) {
 		
 		double eNumer = (-1) * (Math.pow((x - mean), 2));
