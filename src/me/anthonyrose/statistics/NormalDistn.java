@@ -1,8 +1,13 @@
 package me.anthonyrose.statistics;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class NormalDistn {
 	
 	/* Created by AnthonyRose */
+	
+	private Random mRandom = new Random();
 	
 	public double normalDistnPDF(double x, double mean, double stdev) {
 		
@@ -17,6 +22,18 @@ public class NormalDistn {
 		} else {
 			return (numerator / denominator);
 		}		
+	}
+	
+	public double getRandomNumberFromDistn(double mean, double stdev) {
+		return (mean + mRandom.nextGaussian() * stdev);
+	}
+	
+	public ArrayList<Double> getRandomNumberListFromDistn(double mean, double stdev, int n) {
+		ArrayList<Double> randomList = new ArrayList<Double>();
+		for (int i = 0; i < n; i++) {
+			randomList.add( getRandomNumberFromDistn(mean, stdev) );
+		}
+		return randomList; 
 	}
 	
 }
