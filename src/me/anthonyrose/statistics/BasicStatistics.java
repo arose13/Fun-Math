@@ -49,4 +49,10 @@ public class BasicStatistics {
 		return s;
 	}
 	
+	/* Produces Random Numbers from a given range */
+	public int randomFromRange(int min, int max) {
+		int range = (max - min) + 1;
+		return (int) ((Math.random() * range) + min);
+	}
+	
 }
