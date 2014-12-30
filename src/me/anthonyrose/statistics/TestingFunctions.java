@@ -8,30 +8,28 @@ public class TestingFunctions {
 		// TODO test functions below
 		BasicStatistics mStatistics = new BasicStatistics();
 		NormalDistn mDistn = new NormalDistn();
-		
+
 		ArrayList<Double> pop = new ArrayList<Double>();
-		
-		double inputmean = 100;
-		double inputstdev = 15;
-		
-		logger("Input stdev: " + inputstdev);
-		
-		pop = mDistn.getRandomNumberListFromDistn(inputmean, inputstdev, (int) (1 * Math.pow(10, 6)));
-		
-		double stdev = mStatistics.stdev(pop);
-		double mean = mStatistics.mean(pop);
-		
-		long pretime = System.currentTimeMillis();
-		for (Double iq : pop) {
-			logger(iq);
+		pop = mDistn.getRandomNumberListFromDistn(100, 15, (int) (33 * Math.pow(10, 6)));
+		double above120 = 0;
+		double above140 = 0;
+		double above160 = 0;
+		double above180 = 0;
+		for (Double x : pop) {
+			if (x >= 120) above120 = above120 + 1;
+			if (x >= 140) above140 = above140 + 1;
+			if (x >= 160) above160 = above160 + 1;
+			if (x >= 180) above180 = above180 + 1;
 		}
-		long posttime = System.currentTimeMillis();
-		logger("mean: " + mean + " and stdev: " + stdev);
-		logger("time pre  : " + pretime);
-		logger("time post : " + posttime);
-		logger("delta time :" + (posttime - pretime));
+		logger("max value: " + mStatistics.getMax(pop));
+		logger("mean valu: " + mStatistics.mean(pop));
+		logger("min value: " + mStatistics.getMin(pop));
+		logger("above 120: " + above120);
+		logger("above 140: " + above140);
+		logger("above 160: " + above160);
+		logger("above 180: " + above180);
 	}
-	
+
 	private static void logger(Object msg) {
 		System.out.println(msg);
 	}

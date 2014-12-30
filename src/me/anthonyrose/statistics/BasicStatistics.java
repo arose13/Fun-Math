@@ -49,6 +49,24 @@ public class BasicStatistics {
 		return s;
 	}
 	
+	/* Gets the Maximum value */
+	public double getMax(ArrayList<Double> population) {
+		double max = 0;
+		for (Double x : population) {
+			if (x > max) max = x;
+		}
+		return max;
+	}
+	
+	/* Gets the Minimum value */
+	public double getMin(ArrayList<Double> population) {
+		double min = population.get(0); 
+		for (Double x : population) {
+			if (x < min) min = x;
+		}
+		return min;
+	}
+	
 	/* Produces Random Numbers from a given range */
 	public int randomFromRange(int min, int max) {
 		int range = (max - min) + 1;
