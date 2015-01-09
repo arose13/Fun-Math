@@ -24,6 +24,23 @@ public class BasicStatistics {
 		return sumXsq;
 	}
 	
+	private double sumsqs(ArrayList<Double> population) {
+		double sumX = sumX(population);
+		double sumXsq = sumXsq(population);
+		double n = population.size();
+		
+		double ss = (sumXsq - ((Math.pow(sumX, 2))/n));
+		return ss;
+	}
+	/* Get some computational information */
+	public double getSumX(ArrayList<Double> population) {
+		return sumX(population);
+	}
+	
+	public double getSumXsq(ArrayList<Double> population) {
+		return sumXsq(population);
+	}
+	
 	/* Computes Mean or Average */
 	public double mean(ArrayList<Double> population) {
 		double m = 0;
@@ -35,17 +52,28 @@ public class BasicStatistics {
 	
 	/* This computes the variance from a data set */
 	public double variance(ArrayList<Double> population) {
-		double sumX = sumX(population);
-		double sumXsq = sumXsq(population);
+		double popVar = sumsqs(population);
 		double n = population.size();
-		
-		double s2 = (sumXsq - ((Math.pow(sumX, 2))/n)) / (n-1);
+		double s2 = popVar / (n-1);
+		return s2;
+	}
+	
+	/* This computes the population variance from a data set */
+	public double populationVariance(ArrayList<Double> population) {
+		double n = population.size();
+		double s2 = sumsqs(population) / n;
 		return s2;
 	}
 	
 	/* This computes the Standard Deviation from a data set */
 	public double stdev(ArrayList<Double> population) {
 		double s = Math.sqrt( variance(population) );
+		return s;
+	}
+	
+	/* This computes the population standard deviation from a data set */
+	public double populationStDev(ArrayList<Double> population) {
+		double s = Math.sqrt( populationVariance(population) );
 		return s;
 	}
 	

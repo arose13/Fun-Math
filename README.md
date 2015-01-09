@@ -12,3 +12,5 @@ A collection of easy to use statistical functions for Java.
 [12/30/2014] Version 0.1.2
 				Max and Min values from an ArrayList.
 
+[01/08/2015] Version 0.1.3
+				Population Variance and Standard deviation added.
