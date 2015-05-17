@@ -7,23 +7,15 @@ public class Euclidean {
 		return Math.sqrt((Math.pow(x1 - x2, 2)) + (Math.pow(y1 - y2, 2)));
 	}
 	
-    public static void main(String[] args)
-    {
-	double x1 = Double.parseDouble(args[0]);
-	double y1 = Double.parseDouble(args[1]);
-	double x2 = Double.parseDouble(args[2]);
-	double y2 = Double.parseDouble(args[3]);
-
-	double  xDiff = x1-x2;
-        double  xSqr  = Math.pow(xDiff, 2);
-
-	double yDiff = y1-y2;
-	double ySqr = Math.pow(yDiff, 2);
-
-	double output   = Math.sqrt(xSqr + ySqr);
-	
-	System.out.println("Distance = " + output);  
-
-    }
+	// Gets the distance between 2 points in an arbitrary number of dimensions
+	public static double distanceArb(NDPoint p, NDPoint q) {
+		double diffSq = 0;
+		
+		for (int i = 0; i < p.getNumberOfDimensions(); i++) {
+			diffSq = diffSq + Math.pow( (p.getNthValue(i) - q.getNthValue(i)) , 2);
+		}		
+		
+		return ( Math.sqrt(diffSq) );		
+	}
 
 }
